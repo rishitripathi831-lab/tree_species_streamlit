@@ -21,7 +21,7 @@ def download_zip():
             f.write(response.content)
 
 # Function to unzip the model
-def unzip_model(1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth):
+def unzip_model("improved_model.zip"):
     if not os.path.exists(improved_cnn_model.h5):
         with zipfile.ZipFile(improved_model.zip, 'r') as zip_ref:
             zip_ref.extractall()

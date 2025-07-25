@@ -9,29 +9,29 @@ from io import BytesIO
 
 # Google Drive ZIP File ID (edit this)
 FILE_ID = "1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth"  # Example: '1ABCD12345efghXYZ'
-ZIP_FILENAME = 'model.zip'
-MODEL_FILENAME = 'improved_model.h5'
+ZIP_FILENAME = 'improved_model.zip'
+MODEL_FILENAME = 'improved_cnn_model.h5'
 
 # Function to download the ZIP file
-def download_zip(file_id):
-    if not os.path.exists(ZIP_FILENAME):
+def download_zip():
+    if not os.path.exists(improved_model.zip):
         url = "https://drive.google.com/uc?export=download&id=1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth"
         response = requests.get(url)
-        with open(ZIP_FILENAME, 'wb') as f:
+        with open(improved_model.zip, 'wb') as f:
             f.write(response.content)
 
 # Function to unzip the model
-def unzip_model():
-    if not os.path.exists(MODEL_FILENAME):
-        with zipfile.ZipFile(ZIP_FILENAME, 'r') as zip_ref:
+def unzip_model(1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth):
+    if not os.path.exists(improved_cnn_model.h5):
+        with zipfile.ZipFile(improved_model.zip, 'r') as zip_ref:
             zip_ref.extractall()
 
 # Download and load the model
 @st.cache_resource
 def load_model():
-    download_zip(FILE_ID)
+    download_zip(1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth)
     unzip_model()
-    model = tf.keras.models.load_model(MODEL_FILENAME)
+    model = tf.keras.models.load_model(improved_cnn_model.h5)
     return model
 
 # Image preprocessing

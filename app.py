@@ -29,7 +29,7 @@ def unzip_model("improved_model.zip"):
 # Download and load the model
 @st.cache_resource
 def load_model():
-    download_zip(1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth)
+    download_zip("1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth")
     unzip_model()
     model = tf.keras.models.load_model(improved_cnn_model.h5)
     return model

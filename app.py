@@ -8,14 +8,14 @@ from PIL import Image
 from io import BytesIO
 
 # Google Drive ZIP File ID (edit this)
-FILE_ID = '1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth'  # Example: '1ABCD12345efghXYZ'
+FILE_ID = "1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth"  # Example: '1ABCD12345efghXYZ'
 ZIP_FILENAME = 'model.zip'
 MODEL_FILENAME = 'improved_model.h5'
 
 # Function to download the ZIP file
 def download_zip(file_id):
     if not os.path.exists(ZIP_FILENAME):
-        url = f'https://drive.google.com/uc?export=download&id={1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth}'
+        url = "https://drive.google.com/uc?export=download&id=1aOykMRB2qlUizJKEfqAxQGIAoSKnzmth"
         response = requests.get(url)
         with open(ZIP_FILENAME, 'wb') as f:
             f.write(response.content)
